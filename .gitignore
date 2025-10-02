@@ -25,3 +25,14 @@ doc/api/
 
 .flutter-plugins
 .flutter-plugins-dependencies
+
+# FVM Version Cache
+.fvm/
+.idea/
+.vscode/
+ios/
+android/
+linux/
+macos/
+windows/
+web/
