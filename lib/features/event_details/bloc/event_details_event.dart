@@ -7,14 +7,15 @@ abstract class EventDetailsEvent extends Equatable {
   List<Object?> get props => [];
 }
 
-class EventDetailsInitialized extends EventDetailsEvent {
-  const EventDetailsInitialized();
+class EventDetailsStarted extends EventDetailsEvent {
+  const EventDetailsStarted();
 }
 
-class EventDetailsEventDetailsRequested extends EventDetailsEvent {
-  const EventDetailsEventDetailsRequested();
-}
+class EventDetailsBookmarked extends EventDetailsEvent {
+  final bool isBookmarked;
 
-class EventDetailsPreviousEventsRequested extends EventDetailsEvent {
-  const EventDetailsPreviousEventsRequested();
+  const EventDetailsBookmarked({required this.isBookmarked});
+
+  @override
+  List<Object?> get props => [isBookmarked];
 }

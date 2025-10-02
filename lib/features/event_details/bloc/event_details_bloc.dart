@@ -4,15 +4,12 @@ import 'event_details_state.dart';
 
 class EventDetailsBloc extends Bloc<EventDetailsEvent, EventDetailsState> {
   EventDetailsBloc() : super(const EventDetailsState()) {
-    on<EventDetailsInitialized>(_onEventDetailsInitialized);
-    on<EventDetailsEventDetailsRequested>(_onEventDetailsEventDetailsRequested);
-    on<EventDetailsPreviousEventsRequested>(
-      _onEventDetailsPreviousEventsRequested,
-    );
+    on<EventDetailsStarted>(_onEventDetailsInitialized);
+    on<EventDetailsBookmarked>(_onEventDetailsEventDetailsRequested);
   }
 
   Future<void> _onEventDetailsInitialized(
-    EventDetailsInitialized event,
+    EventDetailsStarted event,
     Emitter<EventDetailsState> emit,
   ) async {
     emit(state.copyWith(status: EventDetailsStatus.loading));
@@ -31,29 +28,33 @@ class EventDetailsBloc extends Bloc<EventDetailsEvent, EventDetailsState> {
         date: '20 de outubro de 2025',
       );
 
-      final previousEvents = const [
-        EventData(
+      // Mocked previous events data
+      final previousEvents = [
+        const EventData(
           id: '2',
-          title: 'Evento 1',
-          description: 'Descrição do evento anterior 1',
+          title: 'Frontend Conference',
+          description:
+              'Um evento focado em tecnologias de frontend e melhores práticas de UI/UX.',
           imageSrc: 'https://placehold.co/96x96.png',
-          location: 'São Paulo, SP',
+          location: 'Curitiba, PR',
           date: '15 de setembro de 2025',
         ),
-        EventData(
+        const EventData(
           id: '3',
-          title: 'Evento 2',
-          description: 'Descrição do evento anterior 2',
+          title: 'Backend Summit',
+          description:
+              'Discussões profundas sobre arquitetura de sistemas e APIs modernas.',
           imageSrc: 'https://placehold.co/96x96.png',
-          location: 'Rio de Janeiro, RJ',
+          location: 'Porto Alegre, RS',
           date: '10 de agosto de 2025',
         ),
-        EventData(
+        const EventData(
           id: '4',
-          title: 'Evento 3',
-          description: 'Descrição do evento anterior 3',
+          title: 'Mobile Dev Day',
+          description:
+              'Tudo sobre desenvolvimento mobile, frameworks e tendências.',
           imageSrc: 'https://placehold.co/96x96.png',
-          location: 'Belo Horizonte, MG',
+          location: 'Recife, PE',
           date: '5 de julho de 2025',
         ),
       ];
@@ -76,18 +77,10 @@ class EventDetailsBloc extends Bloc<EventDetailsEvent, EventDetailsState> {
   }
 
   Future<void> _onEventDetailsEventDetailsRequested(
-    EventDetailsEventDetailsRequested event,
+    EventDetailsBookmarked event,
     Emitter<EventDetailsState> emit,
   ) async {
     // Handle event details request
     // This could navigate to event details page or show more info
-  }
-
-  Future<void> _onEventDetailsPreviousEventsRequested(
-    EventDetailsPreviousEventsRequested event,
-    Emitter<EventDetailsState> emit,
-  ) async {
-    // Handle previous events request
-    // This could refresh the previous events list
   }
 }

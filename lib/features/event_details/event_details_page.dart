@@ -9,8 +9,7 @@ class EventDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          EventDetailsBloc()..add(const EventDetailsInitialized()),
+      create: (context) => EventDetailsBloc()..add(const EventDetailsStarted()),
       child: const EventDetailsView(),
     );
   }

@@ -31,73 +31,82 @@ class EventDetailsView extends StatelessWidget {
 
             if (state.status == EventDetailsStatus.success &&
                 state.currentEvent != null) {
-              return CustomScrollView(
-                slivers: [
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Próximo Evento',
-                            style: Theme.of(context).textTheme.bodyMedium,
-                          ),
-                          EventBanner(
-                            imageSrc: state.currentEvent!.imageSrc,
-                            title: state.currentEvent!.title,
-                            description: state.currentEvent!.description,
-                            bookmarkAction: (value) {},
-                            isBookmarked: state.currentEvent!.isBookmarked,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      child: Column(
-                        spacing: 8,
-                        children: [
-                          DSListTile(
-                            title: 'Onde',
-                            subtitle: state.currentEvent!.location,
-                            leading: Icons.location_on,
-                          ),
-                          DSListTile(
-                            title: 'Quando',
-                            subtitle: state.currentEvent!.date,
-                            leading: Icons.event,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SliverToBoxAdapter(
-                    child: Padding(
-                      padding: const EdgeInsets.only(bottom: 40),
-                      child: Carousel(
-                        title: 'Eventos anteriores',
-                        items: state.previousEvents
-                            .map(
-                              (event) => CarouselItem(
-                                title: event.title,
-                                image: event.imageSrc,
-                              ),
-                            )
-                            .toList(),
-                      ),
-                    ),
-                  ),
-                ],
-              );
+              return _EventDetailsViewBody(state: state);
             }
 
             return const Center(child: Text('Nenhum evento disponível'));
           },
         ),
       ),
+    );
+  }
+}
+
+class _EventDetailsViewBody extends StatelessWidget {
+  final EventDetailsState state;
+
+  const _EventDetailsViewBody({required this.state});
+
+  @override
+  Widget build(BuildContext context) {
+    return CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Próximo Evento',
+                  style: Theme.of(context).textTheme.bodyMedium,
+                ),
+                EventBanner(
+                  imageSrc: state.currentEvent!.imageSrc,
+                  title: state.currentEvent!.title,
+                  description: state.currentEvent!.description,
+                  bookmarkAction: (value) {},
+                  isBookmarked: state.currentEvent!.isBookmarked,
+                ),
+              ],
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 16),
+            child: Column(
+              spacing: 8,
+              children: [
+                DSListTile(
+                  title: 'Onde',
+                  subtitle: state.currentEvent!.location,
+                  leading: Icons.location_on,
+                ),
+                DSListTile(
+                  title: 'Quando',
+                  subtitle: state.currentEvent!.date,
+                  leading: Icons.event,
+                ),
+              ],
+            ),
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 40),
+            child: Carousel(
+              title: 'Eventos anteriores',
+              items: state.previousEvents
+                  .map(
+                    (event) =>
+                        CarouselItem(title: event.title, image: event.imageSrc),
+                  )
+                  .toList(),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -121,9 +130,7 @@ class ErrorMessage extends StatelessWidget {
         const SizedBox(height: 16),
         ElevatedButton(
           onPressed: () {
-            context.read<EventDetailsBloc>().add(
-              const EventDetailsInitialized(),
-            );
+            context.read<EventDetailsBloc>().add(const EventDetailsStarted());
           },
           child: const Text('Tentar novamente'),
         ),
