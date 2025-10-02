@@ -1,4 +1,4 @@
-import 'package:challenge/features/home/home.dart';
+import 'package:challenge/features/event_details/event_details.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
       ),
-      home: const HomePage(),
+      home: const EventDetailsPage(),
     );
   }
 }

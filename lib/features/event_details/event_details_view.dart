@@ -1,13 +1,13 @@
 import 'package:challenge/core/widgets/appbar.dart';
 import 'package:challenge/core/widgets/list_tile.dart';
-import 'package:challenge/features/home/widgets/banner.dart';
-import 'package:challenge/features/home/widgets/carousel.dart';
-import 'package:challenge/features/home/bloc/bloc.dart';
+import 'package:challenge/features/event_details/widgets/banner.dart';
+import 'package:challenge/features/event_details/widgets/carousel.dart';
+import 'package:challenge/features/event_details/bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView({super.key});
+class EventDetailsView extends StatelessWidget {
+  const EventDetailsView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,19 +17,19 @@ class HomeView extends StatelessWidget {
       body: SafeArea(
         bottom: false,
         minimum: EdgeInsets.symmetric(horizontal: 16),
-        child: BlocBuilder<HomeBloc, HomeState>(
+        child: BlocBuilder<EventDetailsBloc, EventDetailsState>(
           builder: (context, state) {
-            if (state.status == HomeStatus.loading) {
+            if (state.status == EventDetailsStatus.loading) {
               return const Center(child: CircularProgressIndicator());
             }
 
-            if (state.status == HomeStatus.failure) {
+            if (state.status == EventDetailsStatus.failure) {
               return Center(
                 child: ErrorMessage(errorMessage: state.errorMessage),
               );
             }
 
-            if (state.status == HomeStatus.success &&
+            if (state.status == EventDetailsStatus.success &&
                 state.currentEvent != null) {
               return CustomScrollView(
                 slivers: [
@@ -121,7 +121,9 @@ class ErrorMessage extends StatelessWidget {
         const SizedBox(height: 16),
         ElevatedButton(
           onPressed: () {
-            context.read<HomeBloc>().add(const HomeInitialized());
+            context.read<EventDetailsBloc>().add(
+              const EventDetailsInitialized(),
+            );
           },
           child: const Text('Tentar novamente'),
         ),

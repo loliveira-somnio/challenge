@@ -1,27 +1,27 @@
 import 'package:equatable/equatable.dart';
 
-enum HomeStatus { initial, loading, success, failure }
+enum EventDetailsStatus { initial, loading, success, failure }
 
-class HomeState extends Equatable {
-  const HomeState({
-    this.status = HomeStatus.initial,
+class EventDetailsState extends Equatable {
+  const EventDetailsState({
+    this.status = EventDetailsStatus.initial,
     this.currentEvent,
     this.previousEvents = const [],
     this.errorMessage,
   });
 
-  final HomeStatus status;
+  final EventDetailsStatus status;
   final EventData? currentEvent;
   final List<EventData> previousEvents;
   final String? errorMessage;
 
-  HomeState copyWith({
-    HomeStatus? status,
+  EventDetailsState copyWith({
+    EventDetailsStatus? status,
     EventData? currentEvent,
     List<EventData>? previousEvents,
     String? errorMessage,
   }) {
-    return HomeState(
+    return EventDetailsState(
       status: status ?? this.status,
       currentEvent: currentEvent ?? this.currentEvent,
       previousEvents: previousEvents ?? this.previousEvents,

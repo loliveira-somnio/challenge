@@ -1,19 +1,21 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'home_event.dart';
-import 'home_state.dart';
+import 'event_details_event.dart';
+import 'event_details_state.dart';
 
-class HomeBloc extends Bloc<HomeEvent, HomeState> {
-  HomeBloc() : super(const HomeState()) {
-    on<HomeInitialized>(_onHomeInitialized);
-    on<HomeEventDetailsRequested>(_onHomeEventDetailsRequested);
-    on<HomePreviousEventsRequested>(_onHomePreviousEventsRequested);
+class EventDetailsBloc extends Bloc<EventDetailsEvent, EventDetailsState> {
+  EventDetailsBloc() : super(const EventDetailsState()) {
+    on<EventDetailsInitialized>(_onEventDetailsInitialized);
+    on<EventDetailsEventDetailsRequested>(_onEventDetailsEventDetailsRequested);
+    on<EventDetailsPreviousEventsRequested>(
+      _onEventDetailsPreviousEventsRequested,
+    );
   }
 
-  Future<void> _onHomeInitialized(
-    HomeInitialized event,
-    Emitter<HomeState> emit,
+  Future<void> _onEventDetailsInitialized(
+    EventDetailsInitialized event,
+    Emitter<EventDetailsState> emit,
   ) async {
-    emit(state.copyWith(status: HomeStatus.loading));
+    emit(state.copyWith(status: EventDetailsStatus.loading));
 
     try {
       // Simulate loading current event and previous events
@@ -58,7 +60,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
       emit(
         state.copyWith(
-          status: HomeStatus.success,
+          status: EventDetailsStatus.success,
           currentEvent: currentEvent,
           previousEvents: previousEvents,
         ),
@@ -66,24 +68,24 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     } catch (error) {
       emit(
         state.copyWith(
-          status: HomeStatus.failure,
+          status: EventDetailsStatus.failure,
           errorMessage: 'Erro ao carregar os eventos: ${error.toString()}',
         ),
       );
     }
   }
 
-  Future<void> _onHomeEventDetailsRequested(
-    HomeEventDetailsRequested event,
-    Emitter<HomeState> emit,
+  Future<void> _onEventDetailsEventDetailsRequested(
+    EventDetailsEventDetailsRequested event,
+    Emitter<EventDetailsState> emit,
   ) async {
     // Handle event details request
     // This could navigate to event details page or show more info
   }
 
-  Future<void> _onHomePreviousEventsRequested(
-    HomePreviousEventsRequested event,
-    Emitter<HomeState> emit,
+  Future<void> _onEventDetailsPreviousEventsRequested(
+    EventDetailsPreviousEventsRequested event,
+    Emitter<EventDetailsState> emit,
   ) async {
     // Handle previous events request
     // This could refresh the previous events list
