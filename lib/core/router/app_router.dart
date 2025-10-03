@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:challenge/features/event/presentation/pages/meetup/meetup_page.dart';
+import 'package:challenge/features/event/presentation/pages/meetup_page.dart';
 import 'package:challenge/features/bookmark/presentation/pages/bookmark_list_page.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();

@@ -6,7 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../../core/widgets/error_message.dart';
+import '../../../../core/widgets/error_message.dart';
 
 class MeetupView extends StatelessWidget {
   const MeetupView({super.key});
