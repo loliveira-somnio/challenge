@@ -1,21 +1,18 @@
 import 'package:challenge/core/widgets/bookmark_toggle.dart';
 import 'package:flutter/material.dart';
 
-class EventBanner extends StatelessWidget {
-  const EventBanner({
+import '../../../../data/model/meetup_data.dart';
+import '../../../../core/widgets/list_tile.dart';
+
+class MeetupBanner extends StatelessWidget {
+  const MeetupBanner({
     super.key,
-    required this.imageSrc,
-    this.title,
+    required this.meetup,
     required this.bookmarkAction,
-    required this.isBookmarked,
-    required this.description,
   });
 
-  final String imageSrc;
-  final String? title;
+  final MeetupData meetup;
   final ValueChanged<bool> bookmarkAction;
-  final bool isBookmarked;
-  final String description;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +21,7 @@ class EventBanner extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 16, top: 8),
+          padding: const EdgeInsets.symmetric(vertical: 8),
           child: ClipRRect(
             borderRadius: BorderRadius.circular(26),
             child: AspectRatio(
@@ -34,7 +31,7 @@ class EventBanner extends StatelessWidget {
                 height: 205,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: NetworkImage(imageSrc),
+                    image: NetworkImage(meetup.bannerImageSrc),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -43,15 +40,33 @@ class EventBanner extends StatelessWidget {
           ),
         ),
         _BannerTitle(
-          title: title,
+          title: meetup.title,
           bookmarkAction: bookmarkAction,
-          isBookmarked: isBookmarked,
+          isBookmarked: meetup.isBookmarked,
         ),
         Text(
-          description,
+          meetup.description,
           style: Theme.of(context).textTheme.bodyMedium,
           maxLines: 5,
           overflow: TextOverflow.ellipsis,
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 8),
+          child: Column(
+            spacing: 8,
+            children: [
+              DSListTile(
+                title: 'Onde',
+                subtitle: meetup.location,
+                leading: Icons.location_on,
+              ),
+              DSListTile(
+                title: 'Quando',
+                subtitle: meetup.date,
+                leading: Icons.event,
+              ),
+            ],
+          ),
         ),
       ],
     );

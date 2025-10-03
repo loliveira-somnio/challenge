@@ -47,31 +47,40 @@ class Carousel extends StatelessWidget {
 class CarouselItem extends StatelessWidget {
   final String title;
   final String image;
+  final VoidCallback onTap;
 
-  const CarouselItem({super.key, required this.title, required this.image});
+  const CarouselItem({
+    super.key,
+    required this.title,
+    required this.image,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      width: 96,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 96,
-            height: 96,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              image: DecorationImage(
-                image: NetworkImage(image),
-                fit: BoxFit.cover,
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox(
+        width: 96,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 96,
+              height: 96,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8),
+                image: DecorationImage(
+                  image: NetworkImage(image),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
-          ),
-          const SizedBox(height: 4),
-          Text(title, maxLines: 2, overflow: TextOverflow.ellipsis),
-        ],
+            const SizedBox(height: 4),
+            Text(title, maxLines: 2, overflow: TextOverflow.ellipsis),
+          ],
+        ),
       ),
     );
   }
