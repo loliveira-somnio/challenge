@@ -4,7 +4,7 @@ import 'package:challenge/features/event/bloc/meetup_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/widgets/appbar.dart';
+import '../../../core/widgets/appbar.dart';
 import 'meetup_view.dart';
 
 class MeetupPage extends StatelessWidget {

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:challenge/features/event/presentation/pages/meetup_page.dart';
-import 'package:challenge/features/bookmark/presentation/pages/bookmark_list_page.dart';
+import 'package:challenge/features/event/view/meetup_page.dart';
+import 'package:challenge/features/bookmark_list/view/bookmark_list_page.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellEventNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'event');
@@ -31,7 +31,7 @@ class AppRouter {
     routes: [
       StatefulShellRoute.indexedStack(
         builder: (context, state, child) =>
-            ScaffoldWithNestedNavigation(navigationShell: child),
+            _ScaffoldWithNestedNavigation(navigationShell: child),
         branches: [
           StatefulShellBranch(
             navigatorKey: _shellEventNavigatorKey,
@@ -64,19 +64,14 @@ class AppRouter {
   );
 }
 
-// https://github.com/flutter/packages/blob/main/packages/go_router/example/lib/stateful_shell_route.dart
-class ScaffoldWithNestedNavigation extends StatelessWidget {
-  const ScaffoldWithNestedNavigation({Key? key, required this.navigationShell})
+class _ScaffoldWithNestedNavigation extends StatelessWidget {
+  const _ScaffoldWithNestedNavigation({Key? key, required this.navigationShell})
     : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
   final StatefulNavigationShell navigationShell;
 
   void _goBranch(int index) {
     navigationShell.goBranch(
       index,
-      // A common pattern when using bottom navigation bars is to support
-      // navigating to the initial location when tapping the item that is
-      // already active. This example demonstrates how to support this behavior,
-      // using the initialLocation parameter of goBranch.
       initialLocation: index == navigationShell.currentIndex,
     );
   }
