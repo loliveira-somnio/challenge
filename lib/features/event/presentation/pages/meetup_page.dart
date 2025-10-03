@@ -4,6 +4,7 @@ import 'package:challenge/features/event/bloc/meetup_event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../../../core/widgets/appbar.dart';
 import 'meetup_view.dart';
 
 class MeetupPage extends StatelessWidget {
@@ -20,7 +21,7 @@ class MeetupPage extends StatelessWidget {
     return BlocProvider(
       create: (context) =>
           MeetupBloc(context.read<MeetupRepository>())..add(initialEvent),
-      child: const MeetupView(),
+      child: Scaffold(appBar: DSAppBar.logo(), body: const MeetupView()),
     );
   }
 }

@@ -44,4 +44,9 @@ class MeetupService {
     }
     return meetups.skip(1).toList();
   }
+
+  /// Gets all meetups
+  Future<List<MeetupData>> getAllMeetups() async {
+    return await loadMeetups();
+  }
 }

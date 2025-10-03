@@ -1,7 +1,7 @@
 import 'package:challenge/core/core.dart';
 import 'package:challenge/data/repository/meetup_repository.dart';
 import 'package:challenge/data/services/meetup_service.dart';
-import 'package:challenge/features/bookmark/cubit/bookmark_cubit.dart';
+import 'package:challenge/features/bookmark/logic/bookmark_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -5,6 +5,7 @@ abstract class MeetupRepository {
   Future<MeetupData> getLatestMeetup();
   Future<MeetupData> getMeetupById(String meetupId);
   Future<List<MeetupData>> getPreviousMeetups();
+  Future<List<MeetupData>> getAllMeetups();
 }
 
 class MeetupRepositoryImpl implements MeetupRepository {
@@ -25,5 +26,10 @@ class MeetupRepositoryImpl implements MeetupRepository {
   @override
   Future<List<MeetupData>> getPreviousMeetups() async {
     return await _meetupService.getPreviousMeetups();
+  }
+
+  @override
+  Future<List<MeetupData>> getAllMeetups() async {
+    return await _meetupService.getAllMeetups();
   }
 }

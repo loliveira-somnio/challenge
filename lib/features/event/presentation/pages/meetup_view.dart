@@ -1,5 +1,4 @@
 import 'package:challenge/core/router/app_router.dart';
-import 'package:challenge/core/widgets/appbar.dart';
 import 'package:challenge/features/event/presentation/widgets/meetup_banner.dart';
 import 'package:challenge/features/event/presentation/widgets/carousel.dart';
 import 'package:challenge/features/event/bloc/bloc.dart';
@@ -14,31 +13,27 @@ class MeetupView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: DSAppBar.logo(),
-      body: SafeArea(
-        bottom: false,
-        minimum: EdgeInsets.symmetric(horizontal: 16),
-        child: BlocBuilder<MeetupBloc, MeetupState>(
-          builder: (context, state) {
-            switch (state) {
-              case MeetupLoading() || MeetupInitial():
-                return const Center(child: CircularProgressIndicator());
+    return SafeArea(
+      bottom: false,
+      minimum: EdgeInsets.symmetric(horizontal: 16),
+      child: BlocBuilder<MeetupBloc, MeetupState>(
+        builder: (context, state) {
+          switch (state) {
+            case MeetupLoading() || MeetupInitial():
+              return const Center(child: CircularProgressIndicator());
 
-              case MeetupFailure():
-                return Center(
-                  child: ErrorMessage(errorMessage: state.errorMessage),
-                );
+            case MeetupFailure():
+              return Center(
+                child: ErrorMessage(errorMessage: state.errorMessage),
+              );
 
-              case LatestMeetupLoaded():
-                return _LatestMeetupViewBody(state: state);
+            case LatestMeetupLoaded():
+              return _LatestMeetupViewBody(state: state);
 
-              case SpecificMeetupLoaded():
-                return _SpecificMeetupViewBody(state: state);
-            }
-          },
-        ),
+            case SpecificMeetupLoaded():
+              return _SpecificMeetupViewBody(state: state);
+          }
+        },
       ),
     );
   }

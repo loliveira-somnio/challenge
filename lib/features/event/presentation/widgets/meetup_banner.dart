@@ -1,4 +1,4 @@
-import 'package:challenge/features/bookmark/presentation/bookmark_toggle.dart';
+import 'package:challenge/features/bookmark/presentation/widgets/bookmark_toggle.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/model/meetup_data.dart';

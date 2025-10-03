@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../cubit/bookmark_cubit.dart';
+import '../../logic/bookmark_cubit.dart';
 
 class BookmarkToggle extends StatelessWidget {
   const BookmarkToggle({super.key, required this.meetupId});
@@ -11,7 +11,6 @@ class BookmarkToggle extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BookmarkCubit, Set<String>>(
       builder: (context, state) {
-        print('build');
         final cubit = context.read<BookmarkCubit>();
         final isBookmarked = cubit.isBookmarked(meetupId);
         return IconButton(
