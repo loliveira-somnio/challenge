@@ -1,6 +1,15 @@
 import 'package:equatable/equatable.dart';
 
 class MeetupData extends Equatable {
+  final String id;
+  final String title;
+  final String description;
+  final String smallImageSrc;
+  final String bannerImageSrc;
+  final String location;
+  final String date;
+  final bool isBookmarked;
+
   const MeetupData({
     required this.id,
     required this.title,
@@ -12,14 +21,18 @@ class MeetupData extends Equatable {
     this.isBookmarked = false,
   });
 
-  final String id;
-  final String title;
-  final String description;
-  final String smallImageSrc;
-  final String bannerImageSrc;
-  final String location;
-  final String date;
-  final bool isBookmarked;
+  factory MeetupData.fromJson(Map<String, dynamic> json) {
+    return MeetupData(
+      id: json['id'],
+      title: json['title'],
+      description: json['description'],
+      smallImageSrc: json['smallImageSrc'],
+      bannerImageSrc: json['bannerImageSrc'],
+      location: json['location'],
+      date: json['date'],
+      isBookmarked: json['isBookmarked'],
+    );
+  }
 
   @override
   List<Object?> get props => [

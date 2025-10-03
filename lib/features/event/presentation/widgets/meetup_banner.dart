@@ -1,4 +1,4 @@
-import 'package:challenge/core/widgets/bookmark_toggle.dart';
+import 'package:challenge/features/bookmark/presentation/bookmark_toggle.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../data/model/meetup_data.dart';
@@ -39,10 +39,19 @@ class MeetupBanner extends StatelessWidget {
             ),
           ),
         ),
-        _BannerTitle(
-          title: meetup.title,
-          bookmarkAction: bookmarkAction,
-          isBookmarked: meetup.isBookmarked,
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Expanded(
+              child: Text(
+                meetup.title,
+                style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            BookmarkToggle(meetupId: meetup.id),
+          ],
         ),
         Text(
           meetup.description,
@@ -67,37 +76,6 @@ class MeetupBanner extends StatelessWidget {
               ),
             ],
           ),
-        ),
-      ],
-    );
-  }
-}
-
-class _BannerTitle extends StatelessWidget {
-  const _BannerTitle({
-    required this.title,
-    required this.isBookmarked,
-    required this.bookmarkAction,
-  });
-
-  final String? title;
-  final ValueChanged<bool> bookmarkAction;
-  final bool isBookmarked;
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-          title!,
-          style: Theme.of(
-            context,
-          ).textTheme.headlineSmall?.copyWith(fontWeight: FontWeight.bold),
-        ),
-        BookmarkToggle(
-          isBookmarked: isBookmarked,
-          onChanged: (value) => bookmarkAction(value),
         ),
       ],
     );
