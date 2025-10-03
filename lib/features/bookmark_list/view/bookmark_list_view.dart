@@ -1,14 +1,9 @@
 import 'package:challenge/core/core.dart';
-import 'package:challenge/core/widgets/error_message.dart';
+import 'package:challenge/data/data.dart';
+import 'package:challenge/features/bookmark_list/bookmark_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:challenge/data/model/meetup_data.dart';
-import 'package:challenge/features/bookmark_list/bloc/bookmark_list_bloc.dart';
-import 'package:challenge/features/bookmark_list/bloc/bookmark_list_event.dart';
-import 'package:challenge/features/bookmark_list/bloc/bookmark_list_state.dart';
 import 'package:go_router/go_router.dart';
-
-import 'widgets/bookmark_card.dart';
 
 class BookmarkListView extends StatefulWidget {
   const BookmarkListView({super.key});

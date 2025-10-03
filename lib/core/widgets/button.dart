@@ -1,4 +1,4 @@
-import 'package:challenge/core/styles/primary_button.dart';
+import 'package:challenge/core/core.dart';
 import 'package:flutter/material.dart';
 
 class DSButton extends StatelessWidget {

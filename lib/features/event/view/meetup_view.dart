@@ -1,14 +1,8 @@
-import 'package:challenge/core/router/app_router.dart';
-import 'package:challenge/features/event/bloc/meetup_bloc.dart';
-import 'package:challenge/features/event/bloc/meetup_state.dart';
-import 'package:challenge/features/event/view/widgets/meetup_banner.dart';
-import 'package:challenge/features/event/view/widgets/carousel.dart';
-
+import 'package:challenge/core/core.dart';
+import 'package:challenge/features/event/event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../core/widgets/error_message.dart';
 
 class MeetupView extends StatelessWidget {
   const MeetupView({super.key});

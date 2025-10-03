@@ -1,4 +1,4 @@
-import 'package:challenge/data/model/meetup_data.dart';
+import 'package:challenge/data/data.dart';
 import 'package:equatable/equatable.dart';
 
 sealed class BookmarkListState extends Equatable {

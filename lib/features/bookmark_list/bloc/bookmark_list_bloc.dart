@@ -1,12 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:challenge/data/repository/meetup_repository.dart';
-import 'package:challenge/features/bookmark_list/bloc/bookmark_cubit.dart';
+import 'package:challenge/data/data.dart';
+import 'package:challenge/features/bookmark_list/bookmark_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'bookmark_list_event.dart';
-import 'bookmark_list_state.dart';
 
 class BookmarkListBloc extends Bloc<BookmarkListEvent, BookmarkListState> {
   late final StreamSubscription<Set<String>> _bookmarkCubitSubscription;

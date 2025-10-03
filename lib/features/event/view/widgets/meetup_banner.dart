@@ -1,8 +1,7 @@
-import 'package:challenge/features/bookmark_list/view/widgets/bookmark_toggle.dart';
+import 'package:challenge/core/core.dart';
+import 'package:challenge/data/data.dart';
+import 'package:challenge/features/bookmark_list/bookmark_list.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../data/model/meetup_data.dart';
-import '../../../../core/widgets/list_tile.dart';
 
 class MeetupBanner extends StatelessWidget {
   const MeetupBanner({

@@ -1,11 +1,8 @@
-import 'package:challenge/data/repository/meetup_repository.dart';
-import 'package:challenge/features/event/bloc/meetup_bloc.dart';
-import 'package:challenge/features/event/bloc/meetup_event.dart';
+import 'package:challenge/core/core.dart';
+import 'package:challenge/data/data.dart';
+import 'package:challenge/features/event/event.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../core/widgets/appbar.dart';
-import 'meetup_view.dart';
 
 class MeetupPage extends StatelessWidget {
   const MeetupPage({super.key, this.id});

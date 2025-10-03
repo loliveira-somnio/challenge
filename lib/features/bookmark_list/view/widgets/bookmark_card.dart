@@ -1,9 +1,8 @@
-import 'package:challenge/data/model/meetup_data.dart';
-import 'package:challenge/features/bookmark_list/view/widgets/bookmark_toggle.dart';
+import 'package:challenge/core/core.dart';
+import 'package:challenge/data/data.dart';
+import 'package:challenge/features/bookmark_list/bookmark_list.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../../core/router/app_router.dart';
 
 class BookmarkCard extends StatelessWidget {
   const BookmarkCard({super.key, required this.meetup});

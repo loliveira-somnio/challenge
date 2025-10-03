@@ -1,7 +1,6 @@
+import 'package:challenge/features/bookmark_list/bookmark_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../bloc/bookmark_cubit.dart';
 
 class BookmarkToggle extends StatelessWidget {
   const BookmarkToggle({super.key, required this.meetupId});

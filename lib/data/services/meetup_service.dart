@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:flutter/services.dart';
-import '../model/meetup_data.dart';
+import '../data.dart';
 
 class MeetupService {
   static const String _jsonPath = 'assets/data/meetups.json';

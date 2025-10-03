@@ -1,5 +1,4 @@
-import '../model/meetup_data.dart';
-import '../services/meetup_service.dart';
+import '../data.dart';
 
 abstract class MeetupRepository {
   Future<MeetupData> getLatestMeetup();
