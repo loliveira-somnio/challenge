@@ -1,6 +1,6 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:challenge/core/core.dart';
-import 'package:challenge/bookmark/cubit/cubit.dart';
+import 'package:challenge/bookmark/bookmark.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meetup_repository/meetup_repository.dart';

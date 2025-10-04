@@ -1,2 +1,2 @@
-// Bookmark list BLoC exports
+// Bookmark cubit exports
 export 'bookmark_cubit.dart';

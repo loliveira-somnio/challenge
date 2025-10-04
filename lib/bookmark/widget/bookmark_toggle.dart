@@ -10,11 +10,10 @@ class BookmarkToggle extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<BookmarkCubit, Set<String>>(
       builder: (context, state) {
-        final cubit = context.read<BookmarkCubit>();
-        final isBookmarked = cubit.isBookmarked(meetupId);
+        final isBookmarked = state.contains(meetupId);
         return IconButton(
           onPressed: () {
-            cubit.toggleBookmark(meetupId);
+            context.read<BookmarkCubit>().toggleBookmark(meetupId);
           },
           icon: Icon(
             isBookmarked ? Icons.bookmark : Icons.bookmark_border,

@@ -5,8 +5,7 @@ class BookmarkCubit extends Cubit<Set<String>> {
 
   void toggleBookmark(String meetupId) {
     if (state.contains(meetupId)) {
-      final bookmarks = state..remove(meetupId);
-      emit({...bookmarks});
+      emit({...state}..remove(meetupId));
     } else {
       emit({...state, meetupId});
     }
