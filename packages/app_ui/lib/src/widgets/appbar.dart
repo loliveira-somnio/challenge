@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:app_ui/src/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class DSAppBar extends AppBar {
@@ -14,21 +15,22 @@ class DSAppBar extends AppBar {
 
   @override
   Widget get flexibleSpace => ClipRect(
-    child: BackdropFilter(
-      filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-      child: Container(
-        color: Colors.white.withValues(alpha: 0.1), // Adjust opacity for glass
-      ),
-    ),
-  );
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+          child: Container(
+            color:
+                Colors.white.withValues(alpha: 0.1), // Adjust opacity for glass
+          ),
+        ),
+      );
 
   @override
   bool? get centerTitle => false;
 
   @override
   Widget get title => titleText != null
-      ? Text(titleText!, style: TextStyle(fontSize: 20))
-      : Image.asset('assets/logo.png', width: 180);
+      ? Text(titleText!, style: const TextStyle(fontSize: 20))
+      : Assets.images.logo.image(width: 180);
 
   @override
   Color? get backgroundColor => Colors.white;

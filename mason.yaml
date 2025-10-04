@@ -3,3 +3,7 @@ bricks:
     git:
       url: "https://github.com/gianfrancopapa/bricks"
       path: dart_package
+  ui_package:
+    git:
+      url: "https://github.com/gianfrancopapa/bricks"
+      path: ui_package

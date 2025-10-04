@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:challenge/core/core.dart';
 import 'package:challenge/event/event.dart';
 import 'package:flutter/material.dart';

@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:challenge/core/core.dart';
 
 import 'package:challenge/bookmark_list/bookmark_list.dart';
@@ -103,7 +104,6 @@ class _BookmarkListEmptyState extends StatelessWidget {
             onPressed: () {
               context.go(AppRouter.meetup());
             },
-            icon: const Icon(Icons.explore),
             label: const Text('Explorar Meetups'),
             style: ElevatedButton.styleFrom(
               backgroundColor: Colors.blue,

@@ -1,3 +1,4 @@
+import 'package:app_ui/app_ui.dart';
 import 'package:challenge/core/core.dart';
 
 import 'package:challenge/bookmark_list/bookmark_list.dart';
@@ -24,9 +25,8 @@ class MyApp extends StatelessWidget {
       create: (context) => BookmarkCubit(),
       child: MaterialApp.router(
         title: 'Challenge App',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blueAccent),
-        ),
+        theme: APPTheme().lightTheme,
+        darkTheme: APPTheme().darkTheme,
         routerConfig: AppRouter.router,
       ),
     );
