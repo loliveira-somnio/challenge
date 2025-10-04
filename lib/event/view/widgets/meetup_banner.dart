@@ -25,9 +25,7 @@ class MeetupBanner extends StatelessWidget {
             borderRadius: BorderRadius.circular(26),
             child: AspectRatio(
               aspectRatio: 380 / 205,
-              child: Container(
-                width: 380,
-                height: 205,
+              child: DecoratedBox(
                 decoration: BoxDecoration(
                   image: DecorationImage(
                     image: NetworkImage(meetup.bannerImageSrc),
