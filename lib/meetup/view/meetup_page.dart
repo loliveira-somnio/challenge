@@ -7,6 +7,11 @@ import 'package:meetup_repository/meetup_repository.dart';
 class MeetupPage extends StatelessWidget {
   const MeetupPage({super.key, this.id});
 
+  static const path = '/meetup';
+  static String pathWithId({required String id}) {
+    return '$path/$id';
+  }
+
   final String? id;
 
   @override

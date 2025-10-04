@@ -1,5 +1,4 @@
 import 'package:app_ui/app_ui.dart';
-import 'package:challenge/core/core.dart';
 import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -74,7 +73,7 @@ class _LatestMeetupViewBody extends StatelessWidget {
                       title: event.title,
                       image: event.smallImageSrc,
                       onTap: () {
-                        context.go(AppRouter.meetup(id: event.id));
+                        context.go(MeetupPage.pathWithId(id: event.id));
                       },
                     ),
                   )

@@ -9,6 +9,8 @@ import 'package:meetup_repository/meetup_repository.dart';
 class BookmarkListPage extends StatelessWidget {
   const BookmarkListPage({super.key});
 
+  static const path = '/bookmarks';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

@@ -1,6 +1,5 @@
 import 'package:challenge/bookmark/widget/bookmark_toggle.dart';
-import 'package:challenge/core/core.dart';
-
+import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meetup_repository/meetup_repository.dart';
@@ -18,7 +17,7 @@ class BookmarkCard extends StatelessWidget {
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: InkWell(
         onTap: () {
-          context.go(AppRouter.meetup(id: meetup.id));
+          context.go(MeetupPage.pathWithId(id: meetup.id));
         },
         borderRadius: BorderRadius.circular(12),
         child: Column(

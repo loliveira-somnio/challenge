@@ -1,7 +1,7 @@
 import 'package:app_ui/app_ui.dart';
-import 'package:challenge/core/core.dart';
 
 import 'package:challenge/bookmark_list/bookmark_list.dart';
+import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';
@@ -115,7 +115,7 @@ class _BookmarkListEmptyState extends StatelessWidget {
           const SizedBox(height: 24),
           PrimaryButton(
             onPressed: () {
-              context.go(AppRouter.meetup());
+              context.go(MeetupPage.path);
             },
             title: 'Explorar Meetups',
             icon: Icons.explore,

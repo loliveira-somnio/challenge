@@ -11,20 +11,12 @@ final _shellBookmarkNavigatorKey = GlobalKey<NavigatorState>(
 );
 
 class AppRouter {
-  static String meetup({String? id}) {
-    return id != null ? '/event/$id' : '/event';
-  }
-
-  static String bookmarks() {
-    return '/bookmarks';
-  }
-
   static final GoRouter router = GoRouter(
     navigatorKey: _rootNavigatorKey,
-    initialLocation: '/event',
+    initialLocation: MeetupPage.path,
     redirect: (context, state) {
       if (state.path == '/') {
-        return '/event';
+        return MeetupPage.path;
       }
       return null;
     },
@@ -37,7 +29,7 @@ class AppRouter {
             navigatorKey: _shellEventNavigatorKey,
             routes: [
               GoRoute(
-                path: '/event',
+                path: MeetupPage.path,
                 builder: (context, state) => const MeetupPage(),
                 routes: [
                   GoRoute(
@@ -53,7 +45,7 @@ class AppRouter {
             navigatorKey: _shellBookmarkNavigatorKey,
             routes: [
               GoRoute(
-                path: '/bookmarks',
+                path: BookmarkListPage.path,
                 builder: (context, state) => const BookmarkListPage(),
               ),
             ],
