@@ -23,10 +23,13 @@ class DSListTile extends StatelessWidget {
         width: 48,
         height: 48,
         decoration: BoxDecoration(
-          color: Colors.blueAccent.withValues(alpha: 0.1),
+          color: Theme.of(context)
+              .colorScheme
+              .primaryContainer
+              .withValues(alpha: 0.3),
           borderRadius: BorderRadius.circular(12),
         ),
-        child: Icon(leading, color: Colors.blueAccent),
+        child: Icon(leading, color: Theme.of(context).colorScheme.primary),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:challenge/bookmark/cubit/bookmark_cubit.dart';
 import 'package:challenge/bookmark_list/bookmark_list.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meetup_repository/meetup_repository.dart';

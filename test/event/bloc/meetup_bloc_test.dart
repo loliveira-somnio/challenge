@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:challenge/data/data.dart';
 import 'package:challenge/event/event.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:meetup_repository/meetup_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
 class _MockMeetupRepository extends Mock implements MeetupRepository {}
@@ -25,7 +25,7 @@ void main() {
     });
 
     group('LatestMeetupRequested', () {
-      const mockCurrentEvent = MeetupData(
+      const mockCurrentEvent = Meetup(
         id: 'current-1',
         title: 'Current Meetup',
         description: 'Current meetup description',
@@ -34,14 +34,14 @@ void main() {
       );
 
       const mockPreviousEvents = [
-        MeetupData(
+        Meetup(
           id: 'prev-1',
           title: 'Previous Meetup 1',
           description: 'Previous meetup 1 description',
           location: 'Rio de Janeiro',
           date: '2023-12-15',
         ),
-        MeetupData(
+        Meetup(
           id: 'prev-2',
           title: 'Previous Meetup 2',
           description: 'Previous meetup 2 description',
@@ -149,7 +149,7 @@ void main() {
     });
 
     group('SpecificMeetupRequested', () {
-      const mockEvent = MeetupData(
+      const mockEvent = Meetup(
         id: 'specific-1',
         title: 'Specific Meetup',
         description: 'Specific meetup description',
@@ -178,7 +178,7 @@ void main() {
       blocTest<MeetupBloc, MeetupState>(
         'emits [SpecificMeetupLoaded] when SpecificMeetupRequested with different id succeeds',
         build: () {
-          const differentEvent = MeetupData(
+          const differentEvent = Meetup(
             id: 'specific-2',
             title: 'Different Specific Meetup',
             description: 'Different specific meetup description',
@@ -194,7 +194,7 @@ void main() {
             bloc.add(const SpecificMeetupRequested(id: 'specific-2')),
         expect: () => [
           const SpecificMeetupLoaded(
-            event: MeetupData(
+            event: Meetup(
               id: 'specific-2',
               title: 'Different Specific Meetup',
               description: 'Different specific meetup description',
@@ -212,7 +212,7 @@ void main() {
     });
 
     group('multiple events', () {
-      const mockCurrentEvent = MeetupData(
+      const mockCurrentEvent = Meetup(
         id: 'current-1',
         title: 'Current Meetup',
         description: 'Current meetup description',
@@ -221,7 +221,7 @@ void main() {
       );
 
       const mockPreviousEvents = [
-        MeetupData(
+        Meetup(
           id: 'prev-1',
           title: 'Previous Meetup 1',
           description: 'Previous meetup 1 description',
@@ -230,7 +230,7 @@ void main() {
         ),
       ];
 
-      const mockSpecificEvent = MeetupData(
+      const mockSpecificEvent = Meetup(
         id: 'specific-1',
         title: 'Specific Meetup',
         description: 'Specific meetup description',

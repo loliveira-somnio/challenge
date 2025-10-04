@@ -1,6 +1,6 @@
-import 'package:challenge/data/data.dart';
 import 'package:challenge/bookmark_list/bookmark_list.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:meetup_repository/meetup_repository.dart';
 
 void main() {
   group(BookmarkListState, () {
@@ -54,7 +54,7 @@ void main() {
 
     group(BookmarkListLoaded, () {
       final mockMeetups = [
-        const MeetupData(
+        const Meetup(
           id: 'meetup-1',
           title: 'Flutter Meetup',
           description: 'Learn about Flutter',
@@ -62,7 +62,7 @@ void main() {
           date: '2024-01-15',
           bannerImageSrc: 'https://example.com/image1.jpg',
         ),
-        const MeetupData(
+        const Meetup(
           id: 'meetup-2',
           title: 'Dart Conference',
           description: 'Advanced Dart techniques',

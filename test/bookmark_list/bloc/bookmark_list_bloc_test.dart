@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc_test/bloc_test.dart';
-import 'package:challenge/data/data.dart';
+import 'package:challenge/bookmark/cubit/bookmark_cubit.dart';
+
 import 'package:challenge/bookmark_list/bookmark_list.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:meetup_repository/meetup_repository.dart';
 import 'package:mocktail/mocktail.dart';
 
 class _MockMeetupRepository extends Mock implements MeetupRepository {}
@@ -42,7 +44,7 @@ void main() {
 
     group('BookmarkListRequested', () {
       final mockMeetups = [
-        const MeetupData(
+        const Meetup(
           id: 'meetup-1',
           title: 'Flutter Meetup',
           description: 'Learn about Flutter',
@@ -50,7 +52,7 @@ void main() {
           date: '2024-01-15',
           bannerImageSrc: 'https://example.com/image1.jpg',
         ),
-        const MeetupData(
+        const Meetup(
           id: 'meetup-2',
           title: 'Dart Conference',
           description: 'Advanced Dart techniques',
@@ -58,7 +60,7 @@ void main() {
           date: '2024-01-20',
           bannerImageSrc: 'https://example.com/image2.jpg',
         ),
-        const MeetupData(
+        const Meetup(
           id: 'meetup-3',
           title: 'Mobile Development',
           description: 'Cross-platform development',
@@ -106,7 +108,7 @@ void main() {
         build: () {
           when(
             () => mockMeetupRepository.getAllMeetups(),
-          ).thenAnswer((_) async => <MeetupData>[]);
+          ).thenAnswer((_) async => <Meetup>[]);
           when(() => mockBookmarkCubit.state).thenReturn({'meetup-1'});
           return bookmarkListBloc;
         },
@@ -157,7 +159,7 @@ void main() {
         build: () {
           when(
             () => mockMeetupRepository.getAllMeetups(),
-          ).thenAnswer((_) async => <MeetupData>[]);
+          ).thenAnswer((_) async => <Meetup>[]);
           when(() => mockBookmarkCubit.state).thenReturn(<String>{});
           return bookmarkListBloc;
         },

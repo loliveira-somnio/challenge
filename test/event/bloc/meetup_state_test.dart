@@ -1,6 +1,6 @@
-import 'package:challenge/data/data.dart';
 import 'package:challenge/event/event.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:meetup_repository/meetup_repository.dart';
 
 void main() {
   group(MeetupState, () {
@@ -33,7 +33,7 @@ void main() {
     });
 
     group(LatestMeetupLoaded, () {
-      const mockCurrentEvent = MeetupData(
+      const mockCurrentEvent = Meetup(
         id: 'current-1',
         title: 'Current Meetup',
         description: 'Current meetup description',
@@ -42,14 +42,14 @@ void main() {
       );
 
       const mockPreviousEvents = [
-        MeetupData(
+        Meetup(
           id: 'prev-1',
           title: 'Previous Meetup 1',
           description: 'Previous meetup 1 description',
           location: 'Rio de Janeiro',
           date: '2023-12-15',
         ),
-        MeetupData(
+        Meetup(
           id: 'prev-2',
           title: 'Previous Meetup 2',
           description: 'Previous meetup 2 description',
@@ -92,7 +92,7 @@ void main() {
       });
 
       test('different current events are not equal', () {
-        const differentCurrentEvent = MeetupData(
+        const differentCurrentEvent = Meetup(
           id: 'different-current',
           title: 'Different Current Meetup',
           description: 'Different current meetup description',
@@ -115,7 +115,7 @@ void main() {
 
       test('different previous events are not equal', () {
         const differentPreviousEvents = [
-          MeetupData(
+          Meetup(
             id: 'different-prev',
             title: 'Different Previous Meetup',
             description: 'Different previous meetup description',
@@ -139,7 +139,7 @@ void main() {
 
       group('copyWith', () {
         test('returns new instance with updated currentEvent', () {
-          const newCurrentEvent = MeetupData(
+          const newCurrentEvent = Meetup(
             id: 'new-current',
             title: 'New Current Meetup',
             description: 'New current meetup description',
@@ -162,7 +162,7 @@ void main() {
 
         test('returns new instance with updated previousEvents', () {
           const newPreviousEvents = [
-            MeetupData(
+            Meetup(
               id: 'new-prev',
               title: 'New Previous Meetup',
               description: 'New previous meetup description',
@@ -185,7 +185,7 @@ void main() {
         });
 
         test('returns new instance with both updated', () {
-          const newCurrentEvent = MeetupData(
+          const newCurrentEvent = Meetup(
             id: 'new-current',
             title: 'New Current Meetup',
             description: 'New current meetup description',
@@ -194,7 +194,7 @@ void main() {
           );
 
           const newPreviousEvents = [
-            MeetupData(
+            Meetup(
               id: 'new-prev',
               title: 'New Previous Meetup',
               description: 'New previous meetup description',
@@ -232,7 +232,7 @@ void main() {
     });
 
     group(SpecificMeetupLoaded, () {
-      const mockEvent = MeetupData(
+      const mockEvent = Meetup(
         id: 'specific-1',
         title: 'Specific Meetup',
         description: 'Specific meetup description',
@@ -261,7 +261,7 @@ void main() {
       });
 
       test('different events are not equal', () {
-        const differentEvent = MeetupData(
+        const differentEvent = Meetup(
           id: 'different-specific',
           title: 'Different Specific Meetup',
           description: 'Different specific meetup description',

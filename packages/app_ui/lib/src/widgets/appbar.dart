@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:app_ui/src/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
-class DSAppBar extends AppBar {
+class DSAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? titleText;
 
   DSAppBar.text({super.key, required String title}) : titleText = title;
@@ -11,27 +11,28 @@ class DSAppBar extends AppBar {
   DSAppBar.logo({super.key}) : titleText = null;
 
   @override
-  bool get forceMaterialTransparency => true;
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 
   @override
-  Widget get flexibleSpace => ClipRect(
+  Widget build(BuildContext context) {
+    return AppBar(
+      forceMaterialTransparency: true,
+      flexibleSpace: ClipRect(
         child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child: Container(
-            color:
-                Colors.white.withValues(alpha: 0.1), // Adjust opacity for glass
+            color: Theme.of(context)
+                .colorScheme
+                .surface
+                .withValues(alpha: 0.1), // Adjust opacity for glass
           ),
         ),
-      );
-
-  @override
-  bool? get centerTitle => false;
-
-  @override
-  Widget get title => titleText != null
-      ? Text(titleText!, style: const TextStyle(fontSize: 20))
-      : Assets.images.logo.image(width: 180);
-
-  @override
-  Color? get backgroundColor => Colors.white;
+      ),
+      centerTitle: false,
+      title: titleText != null
+          ? Text(titleText!, style: const TextStyle(fontSize: 20))
+          : Assets.images.logo.image(width: 180),
+      backgroundColor: Theme.of(context).colorScheme.surface,
+    );
+  }
 }

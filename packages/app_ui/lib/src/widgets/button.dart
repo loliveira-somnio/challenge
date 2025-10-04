@@ -1,4 +1,3 @@
-import 'package:app_ui/app_ui.dart';
 import 'package:flutter/material.dart';
 
 class PrimaryButton extends StatelessWidget {
@@ -15,47 +14,15 @@ class PrimaryButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WidgetStateProperty<T> all<T>(T value) => WidgetStateProperty.all(value);
-
-    return TextButton(
+    return ElevatedButton.icon(
       onPressed: onPressed,
-      style: ButtonStyle(
-          // backgroundColor: all(Theme.of(context).colorScheme.primary),
-          // foregroundColor: all(Colors.white),
-          // textStyle: all(
-          //   const TextStyle(fontWeight: APPFontWeight.semiBold),
-          // ),
-          // padding: all(
-          //   const EdgeInsets.symmetric(vertical: APPSpacing.lg),
-          // ),
-          ),
-      child: Row(
-        spacing: 8,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(title),
-          if (icon != null) Icon(icon, color: Colors.white, size: 16)
-        ],
+      label: Text(title),
+      icon: icon != null ? Icon(icon, size: 20) : null,
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
       ),
     );
   }
-}
-
-class PrimaryButtonStyle extends ButtonStyle {
-  const PrimaryButtonStyle();
-  @override
-  WidgetStateProperty<Color?>? get backgroundColor =>
-      WidgetStateProperty.all(Colors.blueAccent);
-
-  @override
-  WidgetStateProperty<Color?>? get foregroundColor =>
-      WidgetStateProperty.all(Colors.white);
-
-  @override
-  WidgetStateProperty<TextStyle?>? get textStyle =>
-      WidgetStateProperty.all(TextStyle(fontWeight: FontWeight.w600));
-
-  @override
-  WidgetStateProperty<EdgeInsets?>? get padding =>
-      WidgetStateProperty.all(EdgeInsets.symmetric(vertical: 16));
 }

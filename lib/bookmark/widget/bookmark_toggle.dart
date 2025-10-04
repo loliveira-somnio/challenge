@@ -1,4 +1,4 @@
-import 'package:challenge/bookmark_list/bookmark_list.dart';
+import 'package:challenge/bookmark/cubit/cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -19,7 +19,12 @@ class BookmarkToggle extends StatelessWidget {
           icon: Icon(
             isBookmarked ? Icons.bookmark : Icons.bookmark_border,
             size: 24,
-            color: isBookmarked ? Colors.blue : Colors.grey,
+            color: isBookmarked
+                ? Theme.of(context).colorScheme.primary
+                : Theme.of(context)
+                    .colorScheme
+                    .onSurface
+                    .withValues(alpha: 0.6),
           ),
           splashRadius: 24 * 0.8,
           padding: EdgeInsets.zero,

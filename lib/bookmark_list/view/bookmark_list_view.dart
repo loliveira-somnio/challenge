@@ -29,7 +29,7 @@ class _BookmarkListViewState extends State<BookmarkListView> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(state.errorMessage),
-              backgroundColor: Colors.red,
+              backgroundColor: Theme.of(context).colorScheme.error,
             ),
           );
         }
@@ -84,32 +84,41 @@ class _BookmarkListEmptyState extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Icon(Icons.bookmark_border, size: 80, color: Colors.grey[400]),
+          Icon(Icons.bookmark_border,
+              size: 80,
+              color: Theme.of(context)
+                  .colorScheme
+                  .onSurface
+                  .withValues(alpha: 0.6)),
           const SizedBox(height: 16),
           Text(
             'Nenhum favorito ainda',
             style: Theme.of(
               context,
-            ).textTheme.headlineSmall?.copyWith(color: Colors.grey[600]),
+            ).textTheme.headlineSmall?.copyWith(
+                color: Theme.of(context)
+                    .colorScheme
+                    .onSurface
+                    .withValues(alpha: 0.7)),
           ),
           const SizedBox(height: 8),
           Text(
             'Adicione alguns meetups aos seus favoritos',
             style: Theme.of(
               context,
-            ).textTheme.bodyMedium?.copyWith(color: Colors.grey[500]),
+            ).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context)
+                    .colorScheme
+                    .onSurface
+                    .withValues(alpha: 0.6)),
           ),
           const SizedBox(height: 24),
-          ElevatedButton.icon(
+          PrimaryButton(
             onPressed: () {
               context.go(AppRouter.meetup());
             },
-            label: const Text('Explorar Meetups'),
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.blue,
-              foregroundColor: Colors.white,
-              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            ),
+            title: 'Explorar Meetups',
+            icon: Icons.explore,
           ),
         ],
       ),

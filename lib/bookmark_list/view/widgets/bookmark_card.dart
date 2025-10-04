@@ -36,11 +36,15 @@ class BookmarkCard extends StatelessWidget {
                 errorBuilder: (context, error, stackTrace) {
                   return Container(
                     height: 200,
-                    color: Colors.grey[300],
-                    child: const Icon(
+                    color:
+                        Theme.of(context).colorScheme.surfaceContainerHighest,
+                    child: Icon(
                       Icons.image_not_supported,
                       size: 50,
-                      color: Colors.grey,
+                      color: Theme.of(context)
+                          .colorScheme
+                          .onSurface
+                          .withValues(alpha: 0.6),
                     ),
                   );
                 },
@@ -56,7 +60,9 @@ class BookmarkCard extends StatelessWidget {
                       Expanded(
                         child: Text(
                           meetup.title,
-                          style: Theme.of(context).textTheme.titleLarge
+                          style: Theme.of(context)
+                              .textTheme
+                              .titleLarge
                               ?.copyWith(fontWeight: FontWeight.bold),
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
@@ -70,7 +76,11 @@ class BookmarkCard extends StatelessWidget {
                     meetup.description,
                     style: Theme.of(
                       context,
-                    ).textTheme.bodyMedium?.copyWith(color: Colors.grey[600]),
+                    ).textTheme.bodyMedium?.copyWith(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withValues(alpha: 0.7)),
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                   ),
@@ -80,27 +90,39 @@ class BookmarkCard extends StatelessWidget {
                       Icon(
                         Icons.location_on,
                         size: 16,
-                        color: Colors.grey[600],
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withValues(alpha: 0.7),
                       ),
                       const SizedBox(width: 4),
                       Text(
                         meetup.location,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey[600],
-                        ),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withValues(alpha: 0.7),
+                            ),
                       ),
                       const SizedBox(width: 16),
                       Icon(
                         Icons.calendar_today,
                         size: 16,
-                        color: Colors.grey[600],
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface
+                            .withValues(alpha: 0.7),
                       ),
                       const SizedBox(width: 4),
                       Text(
                         meetup.date,
                         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                          color: Colors.grey[600],
-                        ),
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onSurface
+                                  .withValues(alpha: 0.7),
+                            ),
                       ),
                     ],
                   ),
