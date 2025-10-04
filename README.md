@@ -2,21 +2,6 @@
 
 A Flutter application for browsing and bookmarking meetup events, built with a clean architecture approach using BLoC pattern and modular packages.
 
-## 🚀 Features
-
-- **Event Discovery**: Browse and view meetup events
-- **Bookmark Management**: Save and manage favorite events
-- **Clean Architecture**: Modular design with separate packages for UI, data, and business logic
-- **State Management**: BLoC pattern for predictable state management
-- **Navigation**: GoRouter for declarative routing with nested navigation
-- **Cross-Platform**: Supports iOS, Android, Web, macOS, Linux, and Windows
-
-## 📱 Screenshots
-
-The app features a bottom navigation with two main sections:
-- **Events Tab**: Browse and view meetup events
-- **Bookmarks Tab**: Manage your saved events
-
 ## 🏗️ Architecture
 
 This project follows a clean architecture pattern with the following structure:
