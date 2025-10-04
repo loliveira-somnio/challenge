@@ -1,6 +1,6 @@
+import 'package:challenge/bookmark/widget/bookmark_toggle.dart';
 import 'package:challenge/core/core.dart';
 
-import 'package:challenge/bookmark_list/bookmark_list.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:meetup_repository/meetup_repository.dart';
