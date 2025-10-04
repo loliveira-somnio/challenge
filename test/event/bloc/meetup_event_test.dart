@@ -1,4 +1,4 @@
-import 'package:challenge/event/event.dart';
+import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

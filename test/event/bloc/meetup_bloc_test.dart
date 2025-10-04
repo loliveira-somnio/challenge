@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:challenge/event/event.dart';
+import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:meetup_repository/meetup_repository.dart';
 import 'package:mocktail/mocktail.dart';

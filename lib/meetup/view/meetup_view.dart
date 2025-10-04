@@ -1,6 +1,6 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:challenge/core/core.dart';
-import 'package:challenge/event/event.dart';
+import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:go_router/go_router.dart';

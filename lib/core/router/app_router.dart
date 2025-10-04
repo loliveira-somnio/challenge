@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:challenge/event/event.dart';
+import 'package:challenge/meetup/meetup.dart';
 import 'package:challenge/bookmark_list/bookmark_list.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
@@ -66,7 +66,7 @@ class AppRouter {
 
 class _ScaffoldWithNestedNavigation extends StatelessWidget {
   const _ScaffoldWithNestedNavigation({Key? key, required this.navigationShell})
-    : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
+      : super(key: key ?? const ValueKey('ScaffoldWithNestedNavigation'));
   final StatefulNavigationShell navigationShell;
 
   void _goBranch(int index) {

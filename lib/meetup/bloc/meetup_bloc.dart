@@ -1,5 +1,5 @@
 import 'package:meetup_repository/meetup_repository.dart';
-import 'package:challenge/event/event.dart';
+import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MeetupBloc extends Bloc<MeetupEvent, MeetupState> {
