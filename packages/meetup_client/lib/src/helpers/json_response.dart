@@ -1,0 +1,58 @@
+// ignore_for_file: public_member_api_docs
+
+class JsonResponse {
+  static const String meetupJson = '''
+[
+    {
+        "id": "1",
+        "title": "Flutter Meetup São Paulo",
+        "description": "Join us for an exciting Flutter meetup where we'll explore the latest features, best practices, and real-world applications. This event is perfect for developers of all levels, from beginners to experts.",
+        "smallImageSrc": "https://placehold.co/96x96.png",
+        "bannerImageSrc": "https://placehold.co/380x205.png",
+        "location": "São Paulo, SP",
+        "date": "20 de outubro de 2025",
+        "isBookmarked": false
+    },
+    {
+        "id": "2",
+        "title": "Dart & Flutter Workshop",
+        "description": "Hands-on workshop covering Dart fundamentals and Flutter development. Learn how to build beautiful, natively compiled applications for mobile, web, and desktop from a single codebase.",
+        "smallImageSrc": "https://placehold.co/96x96.png",
+        "bannerImageSrc": "https://placehold.co/380x205.png",
+        "location": "Curitiba, PR",
+        "date": "15 de setembro de 2025",
+        "isBookmarked": false
+    },
+    {
+        "id": "3",
+        "title": "State Management in Flutter",
+        "description": "Deep dive into different state management solutions in Flutter including BLoC, Provider, Riverpod, and GetX. Learn when to use each approach and best practices.",
+        "smallImageSrc": "https://placehold.co/96x96.png",
+        "bannerImageSrc": "https://placehold.co/380x205.png",
+        "location": "Porto Alegre, RS",
+        "date": "10 de agosto de 2025",
+        "isBookmarked": false
+    },
+    {
+        "id": "4",
+        "title": "Flutter Performance Optimization",
+        "description": "Learn how to optimize your Flutter apps for better performance. We'll cover profiling, memory management, widget optimization, and platform-specific considerations.",
+        "smallImageSrc": "https://placehold.co/96x96.png",
+        "bannerImageSrc": "https://placehold.co/380x205.png",
+        "location": "Rio de Janeiro, RJ",
+        "date": "5 de julho de 2025",
+        "isBookmarked": false
+    },
+    {
+        "id": "5",
+        "title": "Building Cross-Platform Apps",
+        "description": "Explore how to build truly cross-platform applications with Flutter. Learn about platform channels, native integrations, and responsive design patterns.",
+        "smallImageSrc": "https://placehold.co/96x96.png",
+        "bannerImageSrc": "https://placehold.co/380x205.png",
+        "location": "Belo Horizonte, MG",
+        "date": "30 de junho de 2025",
+        "isBookmarked": false
+    }
+]
+  ''';
+}

@@ -1,4 +1,4 @@
-import 'package:challenge/features/event/event.dart';
+import 'package:challenge/event/event.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

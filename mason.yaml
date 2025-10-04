@@ -1,0 +1,5 @@
+bricks:
+  dart_package:
+    git:
+      url: "https://github.com/gianfrancopapa/bricks"
+      path: dart_package

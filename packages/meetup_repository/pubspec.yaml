@@ -1,0 +1,20 @@
+name: meetup_repository
+description: MeetupRepository pure dart package.
+version: 0.1.0+1
+publish_to: none
+
+environment:
+  sdk: "^3.3.0"
+  
+dependencies:
+  equatable: ^2.0.5
+  json_annotation: ^4.9.0
+  meetup_client:
+    path: ../meetup_client
+
+dev_dependencies:
+  build_runner: ^2.4.13
+  json_serializable: ^6.8.0
+  mocktail: ^1.0.4
+  test: ^1.25.8
+  very_good_analysis: ^6.0.0

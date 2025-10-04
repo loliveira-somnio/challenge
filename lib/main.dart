@@ -1,13 +1,15 @@
 import 'package:challenge/core/core.dart';
-import 'package:challenge/data/data.dart';
-import 'package:challenge/features/bookmark_list/bookmark_list.dart';
+
+import 'package:challenge/bookmark_list/bookmark_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meetup_repository/meetup_repository.dart';
+import 'package:meetup_client/meetup_client.dart';
 
 void main() {
   runApp(
     RepositoryProvider<MeetupRepository>(
-      create: (_) => MeetupRepositoryImpl(MeetupService()),
+      create: (_) => MeetupRepository(MeetupClient()),
       child: const MyApp(),
     ),
   );

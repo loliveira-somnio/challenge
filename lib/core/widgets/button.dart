@@ -15,17 +15,16 @@ class DSButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final iconWidget = icon != null
-        ? Icon(icon!, color: Colors.white, size: 16)
-        : null;
-
     return TextButton(
       onPressed: onPressed,
       style: PrimaryButtonStyle(),
       child: Row(
         spacing: 8,
         mainAxisAlignment: MainAxisAlignment.center,
-        children: [Text(title), ?iconWidget],
+        children: [
+          Text(title),
+          if (icon != null) Icon(icon!, color: Colors.white, size: 16)
+        ],
       ),
     );
   }

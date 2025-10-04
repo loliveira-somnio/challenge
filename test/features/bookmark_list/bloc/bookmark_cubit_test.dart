@@ -1,5 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:challenge/features/bookmark_list/bookmark_list.dart';
+import 'package:challenge/bookmark_list/bookmark_list.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

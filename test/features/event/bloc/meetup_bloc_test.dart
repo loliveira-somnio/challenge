@@ -1,6 +1,6 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:challenge/data/data.dart';
-import 'package:challenge/features/event/event.dart';
+import 'package:challenge/event/event.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
-import 'package:challenge/features/event/event.dart';
-import 'package:challenge/features/bookmark_list/bookmark_list.dart';
+import 'package:challenge/event/event.dart';
+import 'package:challenge/bookmark_list/bookmark_list.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellEventNavigatorKey = GlobalKey<NavigatorState>(debugLabel: 'event');
