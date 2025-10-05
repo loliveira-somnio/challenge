@@ -1,0 +1,38 @@
+{
+  "upcomingMeetups": "Próximos Encontros",
+  "@upcomingMeetups": {
+    "description": "Título para a seção que lista encontros que acontecerão no futuro"
+  },
+  "where": "Localização",
+  "@where": {
+    "description": "Rótulo indicando o local do encontro"
+  },
+  "when": "Data e Hora",
+  "@when": {
+    "description": "Rótulo indicando quando o encontro acontecerá"
+  },
+  "previousMeetups": "Encontros Passados",
+  "@previousMeetups": {
+    "description": "Título para a seção que lista encontros que já ocorreram"
+  },
+  "meetups": "Encontros",
+  "@meetups": {
+    "description": "Rótulo geral para encontros"
+  },
+  "bookmarks": "Favoritos",
+  "@bookmarks": {
+    "description": "Rótulo para os encontros salvos ou marcados pelo usuário"
+  },
+  "exploreMeetups": "Descobrir Encontros",
+  "@exploreMeetups": {
+    "description": "Botão ou rótulo de seção convidando usuários a explorar encontros disponíveis"
+  },
+  "anyBookmark": "Nenhum Favorito Ainda",
+  "@anyBookmark": {
+    "description": "Mensagem exibida quando o usuário não marcou nenhum encontro como favorito"
+  },
+  "addBookmark": "Adicione encontros aos seus favoritos para encontrá-los facilmente depois.",
+  "@addBookmark": {
+    "description": "Mensagem instrucional incentivando os usuários a favoritar encontros"
+  }
+}

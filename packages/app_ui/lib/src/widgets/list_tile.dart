@@ -17,7 +17,13 @@ class DSListTile extends StatelessWidget {
     return ListTile(
       contentPadding: EdgeInsets.zero,
       minTileHeight: 50,
-      title: Text(title, style: Theme.of(context).textTheme.titleSmall),
+      title: Text(
+        title,
+        style: Theme.of(context)
+            .textTheme
+            .titleSmall
+            ?.copyWith(fontWeight: FontWeight.w500),
+      ),
       subtitle: Text(subtitle, style: Theme.of(context).textTheme.bodyMedium),
       leading: Container(
         width: 48,

@@ -1,4 +1,5 @@
 import 'package:app_ui/app_ui.dart';
+import 'package:challenge/l10n/l10n.dart';
 import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -51,13 +52,12 @@ class _LatestMeetupViewBody extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 8),
                 child: Text(
-                  'Próximo Evento',
+                  context.l10n.upcomingMeetups,
                   style: Theme.of(context).textTheme.bodyMedium,
                 ),
               ),
               MeetupBanner(
                 meetup: state.currentEvent,
-                bookmarkAction: (value) {},
               ),
             ],
           ),
@@ -66,7 +66,7 @@ class _LatestMeetupViewBody extends StatelessWidget {
           child: Padding(
             padding: const EdgeInsets.only(bottom: 40),
             child: Carousel(
-              title: 'Eventos anteriores',
+              title: context.l10n.previousMeetups,
               items: state.previousEvents
                   .map(
                     (event) => CarouselItem(
@@ -95,7 +95,7 @@ class _SpecificMeetupViewBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       padding: const EdgeInsets.only(top: 8),
-      child: MeetupBanner(meetup: state.event, bookmarkAction: (value) {}),
+      child: MeetupBanner(meetup: state.event),
     );
   }
 }

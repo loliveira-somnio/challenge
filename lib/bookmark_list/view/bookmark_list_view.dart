@@ -1,6 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 
 import 'package:challenge/bookmark_list/bookmark_list.dart';
+import 'package:challenge/l10n/l10n.dart';
 import 'package:challenge/meetup/meetup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -92,7 +93,7 @@ class _BookmarkListEmptyState extends StatelessWidget {
                   .withValues(alpha: 0.6)),
           const SizedBox(height: 16),
           Text(
-            'Nenhum favorito ainda',
+            context.l10n.anyBookmark,
             style: Theme.of(
               context,
             ).textTheme.headlineSmall?.copyWith(
@@ -103,21 +104,23 @@ class _BookmarkListEmptyState extends StatelessWidget {
           ),
           const SizedBox(height: 8),
           Text(
-            'Adicione alguns meetups aos seus favoritos',
+            context.l10n.addBookmark,
+            textAlign: TextAlign.center,
             style: Theme.of(
               context,
             ).textTheme.bodyMedium?.copyWith(
-                color: Theme.of(context)
-                    .colorScheme
-                    .onSurface
-                    .withValues(alpha: 0.6)),
+                  color: Theme.of(context)
+                      .colorScheme
+                      .onSurface
+                      .withValues(alpha: 0.6),
+                ),
           ),
           const SizedBox(height: 24),
           PrimaryButton(
             onPressed: () {
               context.go(MeetupPage.path);
             },
-            title: 'Explorar Meetups',
+            title: context.l10n.exploreMeetups,
             icon: Icons.explore,
           ),
         ],

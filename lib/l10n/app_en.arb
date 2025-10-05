@@ -1,0 +1,38 @@
+{
+  "upcomingMeetups": "Upcoming Meetups",
+  "@upcomingMeetups": {
+    "description": "Title for the section that lists meetups happening in the future"
+  },
+  "where": "Location",
+  "@where": {
+    "description": "Label indicating the location of the meetup"
+  },
+  "when": "Date & Time",
+  "@when": {
+    "description": "Label indicating when the meetup will take place"
+  },
+  "previousMeetups": "Past Meetups",
+  "@previousMeetups": {
+    "description": "Title for the section that lists meetups that have already occurred"
+  },
+  "meetups": "Meetups",
+  "@meetups": {
+    "description": "General label for meetups"
+  },
+  "bookmarks": "Bookmarks",
+  "@bookmarks": {
+    "description": "Label for the user's saved or favorited meetups"
+  },
+  "exploreMeetups": "Discover Meetups",
+  "@exploreMeetups": {
+    "description": "Button or section label inviting users to browse available meetups"
+  },
+  "anyBookmark": "No Bookmarks Yet",
+  "@anyBookmark": {
+    "description": "Message shown when the user has not bookmarked any meetups"
+  },
+  "addBookmark": "Add meetups to your bookmarks to easily find them later.",
+  "@addBookmark": {
+    "description": "Instructional message encouraging users to bookmark meetups"
+  }
+}

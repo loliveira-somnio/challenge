@@ -20,7 +20,10 @@ class BookmarkListPage extends StatelessWidget {
       ),
       child: Scaffold(
         appBar: DSAppBar.text(title: 'Favoritos'),
-        body: const BookmarkListView(),
+        body: SafeArea(
+          minimum: EdgeInsets.symmetric(horizontal: 16),
+          child: const BookmarkListView(),
+        ),
       ),
     );
   }

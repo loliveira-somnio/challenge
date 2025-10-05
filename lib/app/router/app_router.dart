@@ -1,3 +1,4 @@
+import 'package:challenge/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 
 import 'package:go_router/go_router.dart';
@@ -74,9 +75,11 @@ class _ScaffoldWithNestedNavigation extends StatelessWidget {
       body: navigationShell,
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationShell.currentIndex,
-        destinations: const [
-          NavigationDestination(label: 'Event', icon: Icon(Icons.event)),
-          NavigationDestination(label: 'Bookmarks', icon: Icon(Icons.bookmark)),
+        destinations: [
+          NavigationDestination(
+              label: context.l10n.meetups, icon: Icon(Icons.event)),
+          NavigationDestination(
+              label: context.l10n.bookmarks, icon: Icon(Icons.bookmark)),
         ],
         onDestinationSelected: _goBranch,
       ),

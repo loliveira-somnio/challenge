@@ -1,5 +1,7 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:challenge/bookmark/bookmark.dart';
+import 'package:challenge/l10n/app_localizations.dart';
+import 'package:challenge/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:meetup_repository/meetup_repository.dart';
 
@@ -7,11 +9,9 @@ class MeetupBanner extends StatelessWidget {
   const MeetupBanner({
     super.key,
     required this.meetup,
-    required this.bookmarkAction,
   });
 
   final Meetup meetup;
-  final ValueChanged<bool> bookmarkAction;
 
   @override
   Widget build(BuildContext context) {
@@ -62,12 +62,12 @@ class MeetupBanner extends StatelessWidget {
             spacing: 8,
             children: [
               DSListTile(
-                title: 'Onde',
+                title: context.l10n.where,
                 subtitle: meetup.location,
                 leading: Icons.location_on,
               ),
               DSListTile(
-                title: 'Quando',
+                title: context.l10n.when,
                 subtitle: meetup.date,
                 leading: Icons.event,
               ),
