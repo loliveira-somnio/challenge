@@ -1,6 +1,5 @@
 import 'package:app_ui/app_ui.dart';
 import 'package:challenge/bookmark/bookmark.dart';
-import 'package:challenge/l10n/app_localizations.dart';
 import 'package:challenge/l10n/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:meetup_repository/meetup_repository.dart';
